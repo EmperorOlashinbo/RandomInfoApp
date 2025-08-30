@@ -61,5 +61,13 @@ fun RandomInfoScreen(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-
+        Image(
+            painter = painterResource(id = R.drawable.profile_picture),
+            contentDescription = "Profile picture",
+            modifier = Modifier
+                .size(150.dp)
+                .padding(bottom = 16.dp)
+        )
     }
+
+}
