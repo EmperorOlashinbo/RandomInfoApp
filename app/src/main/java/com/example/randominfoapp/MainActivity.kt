@@ -31,19 +31,21 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    RandomInfoAppTheme {
-        Greeting("Android")
-    }
-}
+// Data: Hard-coded list of at least 10 sentences about me.
+private val sentences = listOf(
+    "I am passionate about AI and machine learning.",
+    "My favorite hobbies are boxing and cardio.",
+    "I love reading philosophy novels.",
+    "I have traveled to over 10 countries.",
+    "My dream job is to work in tech innovation.",
+    "I enjoy cooking and eating Nigerian food.",
+    "I am a boxing coach at HKR.",
+    "I am a non-smoker and I don't drink coffee, energy drink, soda, and alcohol.",
+    "I love learning new things.",
+    "I speak three languages fluently, such as Yoruba, English, and Swedish.",
+    "I love watching documentaries about space.",
+    "I have a daughter and her name is Sonia.",
+    "I enjoy listening to music on my free time.",
+    "I love coding.",
+    "My favorite color is blue."
+)
