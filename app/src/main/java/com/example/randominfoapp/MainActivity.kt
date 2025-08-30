@@ -49,3 +49,17 @@ private val sentences = listOf(
     "I love coding.",
     "My favorite color is blue."
 )
+// Main Composable: Structured into a reusable function
+@Composable
+fun RandomInfoScreen(modifier: Modifier = Modifier) {
+    var currentSentence by remember { mutableStateOf("") }  // State for the displayed sentence
+
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+
+    }
