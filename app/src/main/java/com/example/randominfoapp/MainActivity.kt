@@ -8,8 +8,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag // Import testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -31,8 +34,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 // Data: Hard-coded list of at least 10 sentences about me.
-private val sentences = listOf(
+// Make this 'internal' to be accessible from the test in the same module
+internal val sentences = listOf(
     "I am passionate about AI and machine learning.",
     "My favorite hobbies are boxing and cardio.",
     "I love reading philosophy novels.",
@@ -49,6 +54,7 @@ private val sentences = listOf(
     "I love coding.",
     "My favorite color is blue."
 )
+
 // Main Composable: Structured into a reusable function
 @Composable
 fun RandomInfoScreen(modifier: Modifier = Modifier) {
@@ -57,33 +63,41 @@ fun RandomInfoScreen(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(16.dp)
+            .testTag("randomInfoScreenColumn"),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         Image(
             painter = painterResource(id = R.drawable.profile_picture),
-            contentDescription = "Profile picture",
+            contentDescription = "Profile picture", // We can use this for finding
             modifier = Modifier
                 .size(150.dp)
                 .padding(bottom = 16.dp)
+                .testTag("profileImage") // Test tag for the image
         )
         // Display the random sentence
         Text(
             text = currentSentence,
             style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center,
-            modifier = Modifier.padding(bottom = 16.dp)
+            modifier = Modifier
+                .padding(bottom = 16.dp)
+                .testTag("sentenceText") // Test tag for the text
         )
         // Button to randomize and show a new sentence
-        Button(onClick = {
-            currentSentence = sentences.random()  // Random selection
-        }) {
-            Text("Show Random Fact")
+        Button(
+            onClick = {
+                currentSentence = sentences.random()  // Random selection
+            },
+            modifier = Modifier.testTag("randomFactButton") // Test tag for the button
+        ) {
+            Text("Show Random Fact") // We can also find the button by its text
         }
     }
 
 }
+
 // Preview for development (no device needed)
 @Preview(showBackground = true)
 @Composable
