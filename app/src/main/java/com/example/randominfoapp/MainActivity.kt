@@ -75,6 +75,12 @@ fun RandomInfoScreen(modifier: Modifier = Modifier) {
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(bottom = 16.dp)
         )
+        // Button to randomize and show a new sentence
+        Button(onClick = {
+            currentSentence = sentences.random()  // Random selection
+        }) {
+            Text("Show Random Fact")
+        }
     }
 
 }
