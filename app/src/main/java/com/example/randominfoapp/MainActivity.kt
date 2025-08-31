@@ -84,3 +84,11 @@ fun RandomInfoScreen(modifier: Modifier = Modifier) {
     }
 
 }
+// Preview for development (no device needed)
+@Preview(showBackground = true)
+@Composable
+fun RandomInfoScreenPreview() {
+    RandomInfoAppTheme {
+        RandomInfoScreen()
+    }
+}
