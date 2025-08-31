@@ -68,6 +68,13 @@ fun RandomInfoScreen(modifier: Modifier = Modifier) {
                 .size(150.dp)
                 .padding(bottom = 16.dp)
         )
+        // Display the random sentence
+        Text(
+            text = currentSentence,
+            style = MaterialTheme.typography.bodyLarge,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
     }
 
 }
