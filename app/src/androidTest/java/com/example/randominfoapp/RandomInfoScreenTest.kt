@@ -1,10 +1,10 @@
 package com.example.randominfoapp
 
+import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.assertTextContains
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.assertTextContains
 import com.example.randominfoapp.ui.theme.RandomInfoAppTheme
 import org.junit.Rule
 import org.junit.Test

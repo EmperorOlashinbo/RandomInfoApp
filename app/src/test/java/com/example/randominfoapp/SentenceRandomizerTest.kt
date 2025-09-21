@@ -1,7 +1,7 @@
 package com.example.randominfoapp
 
+import org.junit.Assert
 import org.junit.Test
-import org.junit.Assert.*
 
 class SentenceRandomizerTest {
 
@@ -9,20 +9,20 @@ class SentenceRandomizerTest {
     fun testRandomSentenceReturnsValidValue() {
         // Use the internal sentences list directly
         val randomSentence = sentences.random()
-        assertNotNull(randomSentence)
-        assertTrue(sentences.contains(randomSentence))
+        Assert.assertNotNull(randomSentence)
+        Assert.assertTrue(sentences.contains(randomSentence))
     }
 
     @Test
     fun testRandomSentenceHasCorrectLength() {
         // Verify that the random sentence is not empty
         val randomSentence = sentences.random()
-        assertTrue(randomSentence.isNotEmpty())
+        Assert.assertTrue(randomSentence.isNotEmpty())
     }
 
     @Test
     fun testSentenceListSize() {
         // Ensure the list has at least 10 sentences as per requirement
-        assertTrue(sentences.size >= 10)
+        Assert.assertTrue(sentences.size >= 10)
     }
 }
