@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
 }
 
 // Data: Hard-coded list of at least 10 sentences about me.
-// Make this 'internal' to be accessible from the test in the same module
+// I make this 'internal' to be accessible from the test in the same module
 internal val sentences = listOf(
     "I am passionate about AI and machine learning.",
     "My favorite hobbies are boxing and cardio.",

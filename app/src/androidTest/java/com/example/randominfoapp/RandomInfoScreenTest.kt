@@ -35,7 +35,7 @@ class RandomInfoScreenTest {
         // Since exact sentence is random, check for a substring common to all sentences
         composeTestRule.onNodeWithTag("sentenceText")
             .assertIsDisplayed()
-            .assertTextContains("I") // Common character in all sentences; adjust if needed
+            .assertTextContains("I")
 
         // Verify image is displayed
         composeTestRule.onNodeWithTag("profileImage")
